@@ -4,7 +4,7 @@
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Created: 20130424
-;; Version: 0.1.0
+;; Version: 0.2.0
 ;; Status: experimental
 ;; Package-Requires: ((cl-lib "0.2"))
 ;; Keywords: convenience
