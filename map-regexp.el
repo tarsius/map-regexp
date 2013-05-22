@@ -48,6 +48,7 @@ BOUND, if non-nil, bounds the search; it is a buffer position.
 The match found must not extend after that position.
 
 Also see `cl-loop', `re-search-forward', and `match-...'."
+  (declare (indent defun))
   `(save-excursion
      (cl-loop while (re-search-forward ,regexp ,bound t)
               ,clause ,form)))
