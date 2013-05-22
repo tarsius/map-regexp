@@ -52,32 +52,32 @@ Also see `cl-loop', `re-search-forward', and `match-...'."
      (cl-loop while (re-search-forward ,regexp ,bound t)
               ,clause ,form)))
 
-(defun mr-mapc-regexp (function regexp &optional bound)
+(defmacro mr-mapc-regexp (function regexp &optional bound)
   "Search forward from point for REGEXP calling FUNCTION for each match.
 For each match call FUNCTION, which has access to the match data,
 with no arguments.
 
 Optional BOUND, if non-nil, bounds the search; it is a buffer
 position.  The match found must not extend after that position."
-  (mr-loop-regexp regexp bound do (list function)))
+  `(mr-loop-regexp ,regexp ,bound do (funcall ,function)))
 
-(defun mr-mapcar-regexp (function regexp &optional bound)
+(defmacro mr-mapcar-regexp (function regexp &optional bound)
   "Search forward from point for REGEXP calling FUNCTION for each match.
 For each match call FUNCTION, which has access to the match data,
 with no arguments, and make a list of the results.
 
 Optional BOUND, if non-nil, bounds the search; it is a buffer
 position.  The match found must not extend after that position."
-  (mr-loop-regexp regexp bound collect (list function)))
+  `(mr-loop-regexp ,regexp ,bound collect (funcall ,function)))
 
-(defun mr-mapcan-regexp (function regexp &optional bound)
+(defmacro mr-mapcan-regexp (function regexp &optional bound)
   "Search forward from point for REGEXP calling FUNCTION for each match.
 For each match call FUNCTION, which has access to the match data,
 with no arguments, and nconc together the results.
 
 Optional BOUND, if non-nil, bounds the search; it is a buffer
 position.  The match found must not extend after that position."
-  (mr-loop-regexp regexp bound nconc (list function)))
+  `(mr-loop-regexp ,regexp ,bound nconc (funcall ,function)))
 
 (provide 'map-regexp)
 ;; Local Variables:
