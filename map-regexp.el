@@ -1,14 +1,12 @@
 ;;; map-regexp.el --- map over matches of a regular expression
 
-;; Copyright (C) 2013  Jonas Bernoulli
+;; Copyright (C) 2013, 2019  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
-;; Created: 20130424
-;; Version: 0.3.0
-;; Status: experimental
-;; Package-Requires: ((cl-lib "0.2"))
 ;; Keywords: convenience
 ;; Homepage: https://github.com/tarsius/map-regexp
+
+;; Package-Requires: ((cl-lib "0.6.1"))
 
 ;; This file is not part of GNU Emacs.
 
